@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "scan_id": "scan_2026-11-07T14:32:10Z_001",
+  "captured_at": "2026-11-07T14:32:10Z",
+  "device": { "make": "Autel", "model": "MaxiCOM MK808", "firmware": "4.12",
+              "protocol": "ISO 15765-4 (CAN 11/500)" },
+  "vehicle": { "vin": "1FTEW1EP9NKD12345", "odometer_mi": 61842,
+               "odometer_source": "cluster", "ignition": "key_on_engine_running" },
+  "mil_status": { "check_engine_on": true, "dtc_count": 5 },
+  "modules": [
+    { "module": "PCM", "name": "Powertrain Control Module", "communicates": true, "codes": [
+      { "code": "P0300", "status": "confirmed",
+        "description": "Random/Multiple Cylinder Misfire Detected", "occurrences": 3,
+        "freeze_frame": { "rpm": 742, "coolant_temp_f": 198, "vehicle_speed_mph": 0,
+                          "engine_load_pct": 21.5, "fuel_trim_lt_b1_pct": 6.2 } },
+      { "code": "P0420", "status": "confirmed",
+        "description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+        "occurrences": 1, "freeze_frame": null } ] },
+    { "module": "RCM", "name": "Restraints Control Module (airbags)", "communicates": true, "codes": [
+      { "code": "B0001", "status": "confirmed",
+        "description": "Driver Frontal Stage 1 Deployment Control", "occurrences": 1,
+        "freeze_frame": null,
+        "note": "deployment loop open: consistent with a deployed driver airbag" } ] },
+    { "module": "ABS", "name": "Anti-lock Brake System", "communicates": true, "codes": [
+      { "code": "C0035", "status": "pending",
+        "description": "Left Front Wheel Speed Sensor Circuit", "occurrences": 2,
+        "freeze_frame": null } ] },
+    { "module": "BCM", "name": "Body Control Module", "communicates": true, "codes": [
+      { "code": "U0100", "status": "history",
+        "description": "Lost Communication With ECM/PCM", "occurrences": 1,
+        "freeze_frame": null } ] },
+    { "module": "TCM", "name": "Transmission Control Module", "communicates": false,
+      "codes": [], "note": "no response on bus" }
+  ],
+  "readiness_monitors": { "misfire": "incomplete", "fuel_system": "complete",
+                          "catalyst": "incomplete", "evap": "complete",
+                          "o2_sensor": "complete", "o2_heater": "complete" },
+  "live_data_snapshot": { "battery_voltage_v": 12.1, "coolant_temp_f": 198,
+                          "rpm_idle": 742, "intake_air_temp_f": 84, "engine_runtime_s": 312 },
+  "raw": "P0300,P0420,B0001,C0035,U0100"
+}
